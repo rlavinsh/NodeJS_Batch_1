@@ -1,0 +1,34 @@
+Create a Node.js program using only Sync methods of the File System (fs) module.
+
+Requirements:
+
+1. Create a folder named "StudentRecords".
+
+2. Inside the StudentRecords folder, create a file named "students.txt".
+
+3. Add the following student names into the file:
+   Rahul
+   Priya
+   Aman
+   Neha
+
+4. Read the file and display all student names on the console.
+
+5. Append the following students to the file:
+   Karan
+   Sneha
+
+6. Read the updated file again and display the content.
+
+7. Rename the file from:
+   students.txt
+   to
+   studentData.txt
+
+8. Check whether studentData.txt exists or not using the appropriate fs method.
+
+9. Display all files and folders present inside the StudentRecords folder.
+
+10. Delete the file studentData.txt.
+
+11. Finally, delete the StudentRecords folder.
