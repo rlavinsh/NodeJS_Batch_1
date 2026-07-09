@@ -8,7 +8,7 @@ let fs = require("fs");
 
 //writeFileSync
 
-// fs.writeFileSync("student.txt", "hello student");
+// fs.writeFileSync("student.txt", "hello fs");
 
 // appendFileSync: data add karna ho yha update karna ho file mein
 // fs.appendFileSync(
@@ -58,3 +58,74 @@ let fs = require("fs");
 // agar mujhe folder hi delete karna hein we are going to use rmdirSync Method
 // fs.rmdirSync("./files");
 // console.log("Folder delete ho gaya");
+
+// mujhe ek file banani hein
+// console.log("code start");
+// let content = "Hello FS Module";
+// fs.writeFile("./files/teach.txt", content, (err) => {
+//   if (err) {
+//     console.log(err.message);
+//     return;
+//   }
+//   console.log("File Created Successfully");
+// });
+
+// console.log("Code ends");
+
+// mujhe ish file ka data read karna hein
+// console.log("code start");
+
+// fs.readFile("teacher.txt", "utf-8", (err, data) => {
+//   if (err) {
+//     console.log("kuch error aayega");
+//     console.log(err.message);
+//     return;
+//   }
+//   console.log(`File ka data read ho gaya \n${data}`);
+// });
+// console.log("Code ends");
+
+// let content = `\nIn next class we are going to disscuss about the another Modules\n After completing Node JS \n we are going to start React`;
+
+// fs.appendFile("teacher.txt", content, (err) => {
+//   if (err) {
+//     console.log("something went wrong");
+//     return;
+//   }
+//   console.log("data update ho gaya");
+// });
+
+// fs.mkdir("files", (err) => {
+//   if (err) {
+//     console.log("something went wrong");
+//     return;
+//   }
+//   console.log("Folder created successfully");
+// });
+
+// fs.rename("./files/teach.txt","./files/student.txt",(err)=>{
+//       if (err) {
+//     console.log("something went wrong");
+//     return;
+//   }
+//   console.log("File name changed");
+// })
+
+// console.log(fs.existsSync("./files/student.txt"));
+
+// fs.readdir("./files", (err, data) => {
+//   if (err) {
+//     console.log("something went wrong");
+//     return;
+//   }
+//   console.log(data);
+// });
+
+
+// rename
+//mkdir
+//readdir
+//rmdir
+//existSync
+
+// https://github.com/rlavinsh/NodeJS_Batch_1
