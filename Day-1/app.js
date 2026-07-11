@@ -1,3 +1,4 @@
+const console = require("console");
 let fs = require("fs");
 // console.log(fs);
 
@@ -121,11 +122,83 @@ let fs = require("fs");
 //   console.log(data);
 // });
 
-
 // rename
 //mkdir
 //readdir
 //rmdir
 //existSync
 
-// https://github.com/rlavinsh/NodeJS_Batch_1
+// fs.mkdir("Company", (err) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log("Folder created");
+// });
+// let data = `Employee ID : 101
+// Name : Rahul
+// Department : Developer
+
+// Employee ID : 102
+// Name : Priya
+// Department : HR`;
+
+// fs.writeFile("./Company/employees.txt", data, (err) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log("File created");
+// });
+// fs.readFile("./Company/employees.txt","utf-8",(err,data)=>{
+//     if(err){
+//         console.log(err)
+//         return;
+//     }
+//     console.log(data)
+// })
+// let content = `Employee ID : 103
+// Name : Aman
+// Department : Tester`
+// fs.appendFile("./Company/employees.txt",content,(err)=>{
+//     if(err){
+//         console.log(err)
+//         return
+//     }
+//     console.log("File Updated ");
+
+// })
+
+// fs.rename("./Company/employees.txt","./Company/employeeDetails.txt",(err)=>{
+//     if(err){
+//         console.log(err)
+//         return;
+//     }
+//     console.log("File Name changed");
+// })
+
+// console.log(fs.existsSync("./Company/employeeDetails.txt"));
+
+// fs.readdir("./Company", (err, data) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log(data);
+// });
+
+// fs.unlink("./Company/employeeDetails.txt", (err) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log("File deleted");
+// });
+
+// fs.rmdir("./Company", (err) => {
+//   if (err) {
+//     console.log(err);
+//     return;
+//   }
+//   console.log("Folder deleted ");
+// });
