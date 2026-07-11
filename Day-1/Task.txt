@@ -32,3 +32,48 @@ Requirements:
 10. Delete the file studentData.txt.
 
 11. Finally, delete the StudentRecords folder.
+
+
+
+Example-2
+
+Create a Node.js program using only Async methods of the File System (fs) module.
+
+Requirements:
+
+1. Create a folder named "Company".
+
+2. Inside the Company folder, create a file named "employees.txt".
+
+3. Add the following employee details into the file:
+
+Employee ID : 101
+Name : Rahul
+Department : Developer
+
+Employee ID : 102
+Name : Priya
+Department : HR
+
+4. Read the file and display its contents on the console.
+
+5. Append the following employee:
+
+Employee ID : 103
+Name : Aman
+Department : Tester
+
+6. Read the updated file again.
+
+7. Rename the file:
+   employees.txt
+   to
+   employeeDetails.txt
+
+8. Check whether employeeDetails.txt exists or not.
+
+9. Display all files and folders inside the Company folder.
+
+10. Delete employeeDetails.txt.
+
+11. Delete the Company folder.
