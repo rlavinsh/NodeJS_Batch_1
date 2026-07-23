@@ -1,0 +1,18 @@
+{
+  "name": "day-6",
+  "version": "1.0.0",
+  "description": "we are leraning express",
+  "keywords": [
+    "backend"
+  ],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
