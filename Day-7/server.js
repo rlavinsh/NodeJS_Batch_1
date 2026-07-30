@@ -1,17 +1,35 @@
 const express = require("express");
 
 const app = express();
-const user = [
-  { id: 1, firstName: "hello" },
-  {
-    id: 2,
-    firstName: "john",
-  },
-  {
-    id: 3,
-    firstName: "world",
-  },
-];
+app.use(express.json());
+// app.get("/register", (req, res) => {
+//   // console.log(req.params.productId);
+//   console.log(req.query.salary);
+//   res.send("done");
+// });
+app.post("/register", (req, res) => {
+  const { firstName, age, city } = req.body;
+  console.log(firstName, age, city);
+
+  // console.log(req.body);
+  let data = req.body;
+
+  res.json({
+    message: "User Register Successfully",
+    data,
+  });
+});
+// const user = [
+//   { id: 1, firstName: "hello" },
+//   {
+//     id: 2,
+//     firstName: "john",
+//   },
+//   {
+//     id: 3,
+//     firstName: "world",
+//   },
+// ];
 
 // mujeh app ka ek instance create karna hein
 
@@ -27,61 +45,61 @@ const user = [
 //   },
 // ];
 
-const pizza = [
-  {
-    id: 1,
-    name: "Pepperoni",
-    toppings: ["pepperoni", "cheese", "tomato sauce"],
-    price: 12.99,
-  },
-  {
-    id: 2,
-    name: "Margherita",
-    toppings: ["fresh mozzarella", "basil", "tomato sauce"],
-    price: 10.99,
-  },
-  {
-    id: 3,
-    name: "Supreme",
-    toppings: ["pepperoni", "sausage", "onions", "peppers", "mushrooms"],
-    price: 15.99,
-  },
-  {
-    id: 4,
-    name: "Veggie",
-    toppings: ["ham", "pineapple", "cheese", "tomato sauce"],
-    price: 13.99,
-  },
-  {
-    id: 5,
-    name: "Veggie",
-    toppings: ["onions", "peppers", "mushrooms", "olives", "spinach"],
-    price: 14.99,
-  },
-];
+// const pizza = [
+//   {
+//     id: 1,
+//     name: "Pepperoni",
+//     toppings: ["pepperoni", "cheese", "tomato sauce"],
+//     price: 12.99,
+//   },
+//   {
+//     id: 2,
+//     name: "Margherita",
+//     toppings: ["fresh mozzarella", "basil", "tomato sauce"],
+//     price: 10.99,
+//   },
+//   {
+//     id: 3,
+//     name: "Supreme",
+//     toppings: ["pepperoni", "sausage", "onions", "peppers", "mushrooms"],
+//     price: 15.99,
+//   },
+//   {
+//     id: 4,
+//     name: "Veggie",
+//     toppings: ["ham", "pineapple", "cheese", "tomato sauce"],
+//     price: 13.99,
+//   },
+//   {
+//     id: 5,
+//     name: "Veggie",
+//     toppings: ["onions", "peppers", "mushrooms", "olives", "spinach"],
+//     price: 14.99,
+//   },
+// ];
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get("/allUsers", (req, res) => {
-  res.send(user);
-});
-app.get("/allUsers/:id", (req, res) => {
-  console.log(req.params.id);
+// app.get("/allUsers", (req, res) => {
+//   res.send(user);
+// });
+// app.get("/allUsers/:id", (req, res) => {
+//   console.log(req.params.id);
 
-  const id = req.params.id;
-  let result = user.find((val) => {
-    return val.id == id;
-  });
-  res.send(result);
-});
+//   const id = req.params.id;
+//   let result = user.find((val) => {
+//     return val.id == id;
+//   });
+//   res.send(result);
+// });
 
-app.get("/pizza", (req, res) => {
-  const serachName = req.query.name;
-  let newData = pizza.filter((val) => {
-    return serachName.toLowerCase() == val.name.toLowerCase();
-  });
-  res.send(newData);
-});
+// app.get("/pizza", (req, res) => {
+//   const serachName = req.query.name;
+//   let newData = pizza.filter((val) => {
+//     return serachName.toLowerCase() == val.name.toLowerCase();
+//   });
+//   res.send(newData);
+// });
 
 // app.get("/products/:id",(req,res)=>{})
 // app.get("/", (req, res) => {
