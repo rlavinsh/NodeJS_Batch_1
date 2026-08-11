@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
 let employees = [
   {
@@ -162,6 +162,70 @@ app.post("/employees", (req, res) => {
   });
 });
 
+// PATCH
+app.patch("/employees/:id", (req, res) => {
+  let id = Number(req.params.id);
+  let salary = req.body.salary;
+
+  if (isNaN(id) || id < 0) {
+    return res.status(400).json({
+      success: false,
+      message: "Please enter a valid Id",
+    });
+  }
+
+  let user = employees.find((val) => {
+    return val.id === id;
+  });
+
+  if (!user) {
+    return res.status(404).json({
+      success: false,
+      message: "User Not Found",
+    });
+  }
+  salary = Number(salary);
+  if (isNaN(salary) || salary < 0) {
+    return res.status(400).json({
+      success: false,
+      message: "Please enter a valid Salary",
+    });
+  }
+  user.salary = salary;
+  return res.status(200).json({
+    success: true,
+    message: "Salary Updated",
+  });
+});
+
+app.delete("/employees/:id", (req, res) => {
+  let id = Number(req.params.id);
+
+  if (isNaN(id) || id < 0) {
+    return res.status(400).json({
+      success: false,
+      message: "Please enter a valid Id",
+    });
+  }
+
+  let userIdx = employees.findIndex((val) => {
+    return val.id === id;
+  });
+
+  if (userIdx === -1) {
+    return res.status(404).json({
+      success: false,
+      message: "User Not Found",
+    });
+  }
+
+  employees.splice(userIdx, 1);
+
+  return res.status(200).json({
+    success: true,
+    message: "User Deleted successfully",
+  });
+});
 
 app.listen(3000, () => {
   console.log("server is started");
